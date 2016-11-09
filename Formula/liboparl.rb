@@ -7,4 +7,5 @@ class LibOparl < Formula
         system "./macos.build"
         system "cd build && mesonbuild.py -Dprefix=#{prefix}"
         system "cd build && ninja install"
-
+    end
+end
