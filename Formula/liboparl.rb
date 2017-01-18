@@ -9,17 +9,16 @@ class Liboparl < Formula
 
     depends_on "glib"
     depends_on "json-glib"
+    depends_on "gettext"
 
     depends_on "meson" => :build
     depends_on "vala" => :build
     depends_on "ninja" => :build
 
     def install
-        system.mkdir("build")
-        system.cd("build")
-
         mkdir "build" do
             system "meson", "-Dbuild_valadoc=false", "-Dprefix=#{prefix}", ".."
+            system "ninja"
             system "ninja", "install"
         end
     end
