@@ -1,7 +1,7 @@
 class Liboparl < Formula
     desc "A library to access OParl civic information endpoints"
     homepage "https://github.com/OParl/liboparl"
-    url "https://github.com/OParl/liboparl.git"
+    url "https://github.com/OParl/liboparl/archive/v0.2.1.tar.gz"
     version "0.2.1"
     sha256 "f02d4ec209f0f4f5d2c6ab5d456461eb37a0f8d31352d4964a37dd2359418477"
 
@@ -18,8 +18,9 @@ class Liboparl < Formula
         system.mkdir("build")
         system.cd("build")
 
-        system "meson -Dbuild_valadoc=false .."
-        system "mesonconf -Dprefix=#{prefix}"
-        system "ninja install"
+        mkdir "build" do
+            system "meson", "-Dbuild_valadoc=false", "-Dprefix=#{prefix}", ".."
+            system "ninja", "install"
+        end
     end
 end
