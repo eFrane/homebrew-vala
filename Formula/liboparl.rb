@@ -18,8 +18,8 @@ class Liboparl < Formula
         system.mkdir("build")
         system.cd("build")
 
-        system "meson.py -Dbuild_valadoc=false .."
-        system "mesonconf.py -Dprefix=#{prefix}"
+        system "meson -Dbuild_valadoc=false .."
+        system "mesonconf -Dprefix=#{prefix}"
         system "ninja install"
     end
 end
