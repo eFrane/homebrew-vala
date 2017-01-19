@@ -17,8 +17,8 @@ class Liboparl < Formula
 
     def install
         mkdir "build" do
-            system "meson", "-Dbuild_valadoc=false", "-Dprefix=#{prefix}", ".."
-            system "ninja"
+            system "meson", "-Dbuild_valadoc=false", ".."
+            system "mesonconf", "-Dprefix=#{prefix}"
             system "ninja", "install"
         end
     end
