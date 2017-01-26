@@ -10,7 +10,7 @@ packages until they can hopefully be promoted to `homebrew/core`.
 You need to have [homebrew](https://brew.sh) installed. Ideally,
 `brew doctor` echos no serious conflicts. Then it's just a
 
-    `brew tap efrane/vala`
+    brew tap efrane/vala
 
 and you're set. Updating - as with all taps - is handled by
 `brew update` from there on out.
